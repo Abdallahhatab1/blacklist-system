@@ -1,0 +1,30 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <div class="beforeLoaded">please wait...</div>
+    <div class="container">
+        <div class="title_and_message">
+            <div class="title"><span style="color: #000;">black</span>list check</div>
+            <div class="message">...</div>
+
+        </div>
+        <div class="items">
+            <input class="blacklist-text" type="text" placeholder="ex: Admin, Hacker, Agent ...">                
+            <button onclick="getBlacklistResponse()" type="button">submit</button>
+
+        </div>
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
