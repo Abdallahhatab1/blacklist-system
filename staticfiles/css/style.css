@@ -1,0 +1,137 @@
+html,body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #eee;
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+}
+
+.beforeLoaded {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+
+    background: #eee;
+
+    font-size: 25px;
+    align-content: center;
+    text-align: center;
+
+}
+.beforeLoaded.hidden {
+    display: none;
+
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 450px;
+    height: 250px;
+    padding: 30px;
+
+    background: #ddd;
+    box-shadow: 0 0 30px 0px #0006;
+    border-radius: 4px;
+    border: solid 3px #ccc;
+}
+
+.container .title {
+    font-size: 30px;
+    font-weight: 600;
+    color: #999;
+}
+
+.container .message {
+
+    /* الوضع الافتراضي مخفي */
+    visibility: hidden;
+    pointer-events: none;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+
+
+    font-size: 15px;
+    height: fit-content;
+    min-height: 70px;
+    color: #000;
+    box-shadow: 0 0 0 2px #00f;
+    background: #2221;
+
+    border-radius: 3px;
+
+    margin: 25px 0;
+    padding: 2px 5px 2px 5px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.container .message.show {
+    visibility: visible;
+    pointer-events: all;
+}
+
+.container .message.error {
+    color: #f00;
+    box-shadow: 0 0 0 2px #c00;
+}
+.container .message.success {
+    color: #070;
+    box-shadow: 0 0 0 2px #0c0;
+}
+
+.container .items {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+.container .items > * {
+    margin: 0;
+    padding: 5px 0;
+    width: 100%;
+    min-width: 0;
+    border: none;
+    border-radius: 5px;
+
+    color: #333;
+    background: #bbb;
+    font-size: 20px;
+    box-shadow: inset 0 0 0 2px #aaa;
+    transition: 0.3s;
+}
+.container .items input {
+    font-size: 20px;
+    padding-left: 10px;
+
+    /* full width - padding */
+    width: calc(100% - 10px);
+}
+.container .items input:hover,
+.container .items button:hover {
+    background: #ccc;
+    transform: scale(1.02);
+}
+
+.container .items button {
+    cursor: pointer;
+    font-weight: 500;
+}
+.container .items button:hover {
+    color: #888;
+}
+.container .items button:active {
+    transform: scale(0.98);
+
+}

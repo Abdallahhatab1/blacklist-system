@@ -19,8 +19,18 @@ function removeMessage() {
     messageElement.classList.remove("show", "success", "error");
 }
 
-let csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
+// Aiهذه الدالة كاملة بستخدام ال
+function getCookie(name) {
+    let cookies = document.cookie.split(";");
+    for (let cookie of cookies) {
+        if (cookie.trim().startsWith(name + "=")) {
+            return cookie.split("=")[1];
+        }
+    }
+};
+
+let csrftoken = getCookie("csrftoken");
 let timeoutMessage;
 async function getBlacklistResponse() {
     removeMessage();
