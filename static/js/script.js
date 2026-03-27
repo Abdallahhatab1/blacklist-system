@@ -25,6 +25,8 @@ let timeoutMessage;
 async function getBlacklistResponse() {
     removeMessage();
 
+    console.log("get function...");
+
     // check_text() اللي بينرسل لدالة POSTهذا طلب ال 
     let res = await fetch("/check-text/", {
         method: "POST",
