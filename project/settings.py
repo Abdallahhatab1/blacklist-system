@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-+tio!_3u@prw5q8@5s9!#dbogczs+ob^!lh6c2e%@9*v%c)0%u
 DEBUG = True
 
 ALLOWED_HOSTS = ['blacklist-check.onrender.com', 'localhost', '127.0.0.1']
-CSRF_TRUSTED_ORIGINS = ['https://blacklist-check.onrender.com']
+CSRF_TRUSTED_ORIGINS = ["https://blacklist-system-60l9.onrender.com"]
 
 # Application definition
 
