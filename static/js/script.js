@@ -23,7 +23,9 @@ let csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
 let timeoutMessage;
 async function getBlacklistResponse() {
-    removeMessage();
+    clearTimeout(timeoutMessage);
+    
+    addMessage("info", "...");
 
     console.log("get function...");
 
@@ -39,7 +41,12 @@ async function getBlacklistResponse() {
 
     let data = await res.json();
 
-    addMessage(data.status, data.message)
+    removeMessage();
+    addMessage(data.status, data.message);
+
+    timeoutMessage = setTimeout(() => {
+        removeMessage();
+    }, 2000)
 };
 
 
